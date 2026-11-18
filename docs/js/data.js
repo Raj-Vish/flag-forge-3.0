@@ -74,7 +74,7 @@ window.SITE = (function () {
     { phase: 'Phase 02', date: 'Aug 10', title: 'Early Bird Deadline', desc: 'Register before the timer hits zero to grab exclusive swag, priority seeding, and a head start on the practice arena.' },
     { phase: 'Phase 03', date: 'Aug 18', title: 'Team Briefing & Warm-up', desc: 'Final rosters lock. Rules briefing, platform walkthrough, and a set of warm-up challenges drop to get you battle-ready.' },
     { phase: 'Phase 04', date: 'Aug 24', title: 'Qualifiers — Round 1', desc: '3-hour online jeopardy across web, steganography, cryptography and Linux.' },
-    { phase: 'Phase 05', date: 'Aug 30', title: 'The Grand Finale', desc: 'A 6-hour online showdown. Attack-defense plus boss challenges. This is where the gates fall and legends are made.' },
+    { phase: 'Phase 05', date: 'Aug 30', title: 'The Grand Finale', desc: 'A 6-hour online showdown packed with Boot2Root challenges. This is where the gates fall and legends are made.' },
     { phase: 'Phase 06', date: 'Aug 31', title: 'Awards & Closing', desc: 'Winners crowned, prizes distributed, and the Hall of Fame gets a fresh set of names. See you on the leaderboard.' },
   ]
 
