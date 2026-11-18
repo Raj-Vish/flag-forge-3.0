@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B0613" />
+
+    <title>Flag Forge CTF 3.0 — Breach The Gates</title>
+    <meta
+      name="description"
+      content="Flag Forge 3.0 — a 9-hour online Capture The Flag championship. Web, steganography, cryptography and Linux challenges."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Flag Forge CTF 3.0 — Breach The Gates" />
+    <meta
+      property="og:description"
+      content="9 hours. Teams of 2–4. ₹40,000 prize pool. Rally your squad and breach every gate we build."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/photos/ctf-logo.jpg" />
+
+    <!-- No webfonts on purpose: Arial + Courier New. Nothing to download. -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/data.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <!-- Layer 0: animated matrix-rain canvas -->
+      <div class="bg-layer" aria-hidden="true">
+        <canvas id="bg-canvas"></canvas>
+        <div class="bg-vignette"></div>
+        <div class="bg-scanlines"></div>
+      </div>
+
+      <!-- Layer 1: alert glyph / hacker burst (filled by main.js) -->
+      <div id="alert-layer" class="alert-layer" aria-hidden="true"></div>
+
+      <!-- Layer 2: everything readable -->
+      <div class="content">
+        <!-- ================================================= NAVBAR -->
+        <nav id="nav" class="nav">
+          <div class="nav-line"></div>
+
+          <div class="nav-row">
+            <a href="#home" class="brand" data-close-menu>
+              <div class="brand-logo">
+                <div class="brand-logo-img">
+                  <div
+                    data-img-slot
+                    data-src="assets/photos/ctf-logo.jpg"
+                    data-alt="Flag Forge CTF logo"
+                    data-fit="contain"
+                    data-circle
+                    data-eager
+                  ></div>
+                </div>
+                <div class="brand-ring"></div>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name">FLAG FORGE <span class="grad-text">CTF</span></span>
+                <span class="eyebrow brand-tag">&gt;_ Breach The Gates</span>
+              </div>
+            </a>
+
+            <div class="nav-links">
+              <a class="nav-link" data-nav-link href="#home">Home<span class="nav-underline"></span></a>
+              <a class="nav-link" data-nav-link href="#prizes">Prizes<span class="nav-underline"></span></a>
+              <a class="nav-link" data-nav-link href="#timeline">Timeline<span class="nav-underline"></span></a>
+              <a class="nav-link" data-nav-link href="#sponsors">Sponsors<span class="nav-underline"></span></a>
+              <a class="nav-link" data-nav-link href="#memories">Gallery<span class="nav-underline"></span></a>
+            </div>
+
+            <div class="nav-right">
+              <div class="nav-demo">
+                <a href="demo/index.html" target="_blank" rel="noreferrer" class="ffbtn ffbtn-ghost ffbtn-sm">
+                  <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+                  <span class="ffbtn-inner"><span class="ffbtn-static">Demo</span><span class="ffbtn-hover">Open Lab →</span></span>
+                </a>
+              </div>
+
+              <a href="#register" data-register class="ffbtn ffbtn-primary ffbtn-sm">
+                <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+                <span class="ffbtn-inner"><span class="ffbtn-static">Register</span><span class="ffbtn-hover">Join Now →</span></span>
+              </a>
+
+              <button
+                id="menu-toggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile drawer -->
+          <div id="mobile-menu" class="mobile-menu" inert>
+            <div class="mobile-menu-inner">
+              <a class="m-link" data-nav-link data-close-menu href="#home" style="--i: 0"><span class="mono">&gt;</span>Home</a>
+              <a class="m-link" data-nav-link data-close-menu href="#prizes" style="--i: 1"><span class="mono">&gt;</span>Prizes</a>
+              <a class="m-link" data-nav-link data-close-menu href="#timeline" style="--i: 2"><span class="mono">&gt;</span>Timeline</a>
+              <a class="m-link" data-nav-link data-close-menu href="#sponsors" style="--i: 3"><span class="mono">&gt;</span>Sponsors</a>
+              <a class="m-link" data-nav-link data-close-menu href="#memories" style="--i: 4"><span class="mono">&gt;</span>Gallery</a>
+              <a class="m-link" data-close-menu href="demo/index.html" target="_blank" rel="noreferrer" style="--i: 5"><span class="mono">&gt;</span>Demo</a>
+              <div class="m-divider"></div>
+              <div id="mobile-socials" class="m-socials"></div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- ================================================= HERO -->
+        <header id="home" class="hero">
+          <div class="hero-logo">
+            <div class="hero-ring hero-ring-outer"></div>
+            <div class="hero-ring hero-ring-inner"></div>
+            <div class="hero-logo-img">
+              <div
+                data-img-slot
+                data-src="assets/photos/ctf-logo.jpg"
+                data-alt="Flag Forge CTF 3.0"
+                data-fit="contain"
+                data-circle
+                data-eager
+              ></div>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="typewriter" class="grad-text"></span><span class="hero-caret">_</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Flag Forge 3.0 is the campus flagship Capture The Flag championship — 9 hours of web
+            exploitation, cryptography, forensics and reverse engineering. Rally your squad, decrypt
+            the impossible, and breach every gate we build. Only one team walks away with root.
+          </p>
+
+          <div id="countdown" class="countdown"></div>
+
+          <div class="hero-ctas">
+            <a href="#register" data-register class="ffbtn ffbtn-primary ffbtn-lg">
+              <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+              <span class="ffbtn-inner"><span class="ffbtn-static">Register Now</span><span class="ffbtn-hover">Let's Go →</span></span>
+            </a>
+            <a href="#timeline" class="ffbtn ffbtn-ghost ffbtn-lg">
+              <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+              <span class="ffbtn-inner"><span class="ffbtn-static">View Timeline</span><span class="ffbtn-hover">View Timeline</span></span>
+            </a>
+            <a
+              id="brochure-btn"
+              href="assets/FlagForgeCTF3-brochure.pdf"
+              download="FlagForgeCTF3-brochure.pdf"
+              class="ffbtn ffbtn-ghost ffbtn-lg"
+            >
+              <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+              <span class="ffbtn-inner"><span class="ffbtn-static">Download Brochure</span><span class="ffbtn-hover">Get PDF ↓</span></span>
+            </a>
+          </div>
+
+          <div class="scroll-hint" aria-hidden="true">
+            <span class="mono">scroll</span>
+            <span class="scroll-hint-arrow">▾</span>
+          </div>
+        </header>
+
+        <!-- ================================================= SPONSORS -->
+        <section id="sponsors" class="sponsors">
+          <div class="container">
+            <div class="sec-head center">
+              <h2 class="scroll-float" data-scroll-float data-stagger="0.035"><span class="scroll-float-text">Our Sponsors</span></h2>
+              <div class="rule" data-reveal data-delay="120"></div>
+            </div>
+          </div>
+
+          <div id="sponsor-list" class="sponsor-list"></div>
+        </section>
+
+        <!-- ================================================= PRIZES -->
+        <section id="prizes" class="section">
+          <div class="container">
+            <div class="sec-head center">
+              <h2 class="scroll-float" data-scroll-float data-stagger="0.035"><span class="scroll-float-text">The Prize Pool</span></h2>
+              <div class="rule" data-reveal data-delay="120"></div>
+            </div>
+          </div>
+          <div id="prize-list" class="prize-list"></div>
+        </section>
+
+        <!-- ================================================= TIMELINE -->
+        <section id="timeline" class="section">
+          <div class="container" style="margin-bottom: 56px">
+            <div class="sec-head center">
+              <h2 class="scroll-float" data-scroll-float data-stagger="0.035"><span class="scroll-float-text">The Timeline</span></h2>
+              <div class="rule" data-reveal data-delay="120"></div>
+            </div>
+          </div>
+
+          <div id="timeline-list" class="tl">
+            <div class="tl-rail"></div>
+            <div class="tl-fill"></div>
+          </div>
+        </section>
+
+        <!-- ================================================= MEMORIES -->
+        <section id="memories" class="section">
+          <div class="container container-wide">
+            <div class="sec-head center">
+              <h2 class="scroll-float" data-scroll-float data-stagger="0.035"><span class="scroll-float-text">Last Year Memories</span></h2>
+              <div class="rule" data-reveal data-delay="120"></div>
+            </div>
+            <div id="gallery"></div>
+          </div>
+        </section>
+
+        <!-- ================================================= REGISTER CTA -->
+        <section id="register" class="register">
+          <div class="register-orbs" aria-hidden="true">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+          </div>
+
+          <div id="register-panel" class="reg-panel">
+            <div class="reg-glow"></div>
+
+            <div class="reg-body">
+              <div class="reg-heading">
+                <h2 class="scroll-float" data-scroll-float data-stagger="0.028"><span class="scroll-float-text">Ready to breach the gates?</span></h2>
+              </div>
+
+              <p class="reg-copy">
+                Grab 2–4 hackers, claim your slot, and gear up for 9 hours of pure exploitation.
+                Seats are limited — the clock is already ticking.
+              </p>
+
+              <div id="event-facts" class="facts"></div>
+
+              <div class="reg-cta">
+                <a id="register-btn" href="#register" data-register class="ffbtn ffbtn-primary ffbtn-lg">
+                  <span class="ffbtn-bg"><span class="ffbtn-layers"><span class="ffbtn-layer ffbtn-l1"></span><span class="ffbtn-layer ffbtn-l2"></span><span class="ffbtn-layer ffbtn-l3"></span></span></span>
+                  <span class="ffbtn-inner"><span class="ffbtn-static">🚀&nbsp;&nbsp;Register Your Team</span><span class="ffbtn-hover">⚡ Let's Breach →</span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================= FOOTER -->
+        <footer class="footer">
+          <div class="footer-line"></div>
+          <div class="footer-scan"></div>
+
+          <div class="footer-grid">
+            <div>
+              <div class="footer-head">Flag Forge CTF</div>
+              <p class="footer-about">
+                &gt;_ Breach the digital gates. Capture the flags. Forge your legacy in the world of
+                cybersecurity.
+              </p>
+              <ul id="footer-socials" class="socials"></ul>
+            </div>
+
+            <div>
+              <div class="footer-head">Contact</div>
+              <div id="footer-contacts" class="footer-contacts"></div>
+            </div>
+
+            <div>
+              <div class="footer-head">Organized By</div>
+              <div class="footer-org">&gt;_ Ramniranjan Jhunjhunwala College</div>
+              <div class="footer-addr">
+                <div>GHATKOPAR WEST</div>
+                <div>MUMBAI - 400086</div>
+                <div>MAHARASHTRA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>© 2026 FLAG FORGE CTF. ALL RIGHTS RESERVED. <span class="footer-caret">▮</span></span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
