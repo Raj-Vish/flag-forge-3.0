@@ -135,10 +135,7 @@
       )
       root.append(
         el('div', { class: 'gal-group', 'data-reveal': true, 'data-delay': gi * 60 }, [
-          el('div', { class: 'gal-head' }, [
-            el('h3', { class: 'gal-title', text: g.title }),
-            el('span', { class: 'gal-count', text: String(g.photos.length).padStart(2, '0') }),
-          ]),
+          el('div', { class: 'gal-head' }, [el('h3', { class: 'gal-title', text: g.title })]),
           el('div', { class: 'gal-blurb', text: g.blurb }),
           grid,
         ]),

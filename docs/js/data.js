@@ -93,11 +93,6 @@ window.SITE = (function () {
       photos: [4, 6, 7, 8, 9, 10].map((n) => P + 'participants/part' + n + '.webp'),
     },
     {
-      title: 'Lab Decoration',
-      blurb: 'The lab, dressed for a breach.',
-      photos: ['lab1', 'lab2', 'lab3'].map((f) => P + 'lab-decor/' + f + '.webp'),
-    },
-    {
       title: 'Team Flag Forge',
       blurb: 'The crew who built the gates before anyone could break them.',
       photos: [2, 3, 4].map((n) => P + 'team/team' + n + '.webp'),
