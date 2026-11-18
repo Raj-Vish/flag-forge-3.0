@@ -99,7 +99,7 @@
               p.badge ? el('div', { class: 'prize-badge', text: p.badge }) : null,
               el('div', { class: 'prize-place', text: p.place }),
               el('div', { class: 'prize-rank', text: p.rank }),
-              el('div', { class: 'prize-amount tnum', 'data-countup': p.amount, text: '₹0' }),
+              el('div', { class: 'prize-amount tnum', 'data-countup': p.amount, 'data-suffix': '+', text: '₹0+' }),
               p.extra ? el('div', { class: 'prize-extra', text: p.extra }) : null,
             ]),
           ],
@@ -748,7 +748,7 @@
           const step = (now) => {
             const t = Math.min((now - start) / DURATION, 1)
             const eased = 1 - Math.pow(1 - t, 3)
-            node.textContent = '₹' + inr(Math.floor(eased * target))
+            node.textContent = '₹' + inr(Math.floor(eased * target)) + (node.dataset.suffix || '')
             if (t < 1) requestAnimationFrame(step)
           }
           requestAnimationFrame(step)

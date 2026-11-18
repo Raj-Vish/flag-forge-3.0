@@ -70,10 +70,10 @@ window.SITE = (function () {
   ]
 
   const PHASES = [
-    { phase: 'Phase 01', date: 'Aug 01', title: 'Registration Opens', desc: 'The portal goes live. Assemble your squad of 1–4 players, pick your handle, and lock your slot before the queue fills up.' },
+    { phase: 'Phase 01', date: 'Aug 01', title: 'Registration Opens', desc: 'The portal goes live. Assemble your squad of 2–4 players, pick your handle, and lock your slot before the queue fills up.' },
     { phase: 'Phase 02', date: 'Aug 10', title: 'Early Bird Deadline', desc: 'Register before the timer hits zero to grab exclusive swag, priority seeding, and a head start on the practice arena.' },
     { phase: 'Phase 03', date: 'Aug 18', title: 'Team Briefing & Warm-up', desc: 'Final rosters lock. Rules briefing, platform walkthrough, and a set of warm-up challenges drop to get you battle-ready.' },
-    { phase: 'Phase 04', date: 'Aug 24', title: 'Qualifiers — Round 1', desc: '3-hour online jeopardy across web, steganography, cryptography and Linux. Only the top 30 teams punch their ticket to the finals.' },
+    { phase: 'Phase 04', date: 'Aug 24', title: 'Qualifiers — Round 1', desc: '3-hour online jeopardy across web, steganography, cryptography and Linux.' },
     { phase: 'Phase 05', date: 'Aug 30', title: 'The Grand Finale', desc: 'A 6-hour online showdown. Attack-defense plus boss challenges. This is where the gates fall and legends are made.' },
     { phase: 'Phase 06', date: 'Aug 31', title: 'Awards & Closing', desc: 'Winners crowned, prizes distributed, and the Hall of Fame gets a fresh set of names. See you on the leaderboard.' },
   ]
@@ -90,7 +90,7 @@ window.SITE = (function () {
     {
       title: 'Crucial Hours',
       blurb: 'Heads down, terminals up — inside the arena while the clock ran.',
-      photos: [4, 6, 7, 8, 9, 10, 11, 12].map((n) => P + 'participants/part' + n + '.webp'),
+      photos: [4, 6, 7, 8, 9, 10].map((n) => P + 'participants/part' + n + '.webp'),
     },
     {
       title: 'Lab Decoration',
@@ -100,7 +100,7 @@ window.SITE = (function () {
     {
       title: 'Team Flag Forge',
       blurb: 'The crew who built the gates before anyone could break them.',
-      photos: [1, 2, 3, 4, 5].map((n) => P + 'team/team' + n + '.webp'),
+      photos: [2, 3, 4].map((n) => P + 'team/team' + n + '.webp'),
     },
   ]
 
