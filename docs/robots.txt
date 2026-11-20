@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /demo/
+Disallow: /assets/originals/
+
+Sitemap: https://www.flagforgectf.rjcollege.edu.in/sitemap.xml
